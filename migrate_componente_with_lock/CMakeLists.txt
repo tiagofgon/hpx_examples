@@ -1,0 +1,13 @@
+# Require a recent version of cmake
+cmake_minimum_required(VERSION 3.3.2 FATAL_ERROR)
+
+# This project is C++ based.
+project(migrate_componente_with_lock CXX)
+
+# Instruct cmake to find the HPX settings
+find_package(HPX)
+
+add_hpx_executable(program
+    SOURCES program.cpp
+    COMPONENT_DEPENDENCIES iostreams)
+
